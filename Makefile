@@ -13,11 +13,29 @@ build/loops: src/loops.c
 build/sum: src/sum.c
 	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
 
+build/pointer: src/pointer.c
+	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
+
+build/swap: src/swap.c
+	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
+
+build/array: src/array.c
+	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS)
+
 loops: build/loops
 	./build/loops $(ARGS)
 
 sum: build/sum
 	./build/sum $(ARGS)
+
+pointer: build/pointer
+	./build/pointer $(ARGS)
+
+swap: build/swap
+	./build/swap $(ARGS)
+
+array: build/array
+	./build/array $(ARGS)
 
 run: all
 	./build/hello
